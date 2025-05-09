@@ -155,7 +155,7 @@ const WeatherForecast: React.FC = () => {
     };
 
     fetchWeatherData();
-  }, []);
+  }, [error]);
 
   // DayCard component remains unchanged to maintain UI
   const DayCard: React.FC<{ forecast: DayForecast }> = ({ forecast }) => {
