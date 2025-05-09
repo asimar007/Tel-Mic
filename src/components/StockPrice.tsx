@@ -165,7 +165,7 @@ function NikkeiTicker({ currentValue, change }: NikkeiTickerProps) {
       <div className="flex flex-col divide-y divide-blue-900/50">
         {/* Current Value */}
         <motion.div
-          className="bg-gradient-to-r from-blue-600 to-blue-500 text-white flex justify-between items-center p-3 sm:p-4"
+          className="bg-gradient-to-r from-blue-600 to-blue-500 text-white flex justify-between items-center p-1 sm:p-4"
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.4 }}
@@ -188,7 +188,7 @@ function NikkeiTicker({ currentValue, change }: NikkeiTickerProps) {
 
         {/* Change */}
         <motion.div
-          className={`flex justify-between items-center p-3 sm:p-4 ${
+          className={`flex justify-between items-center p-1 sm:p-4 ${
             isPositive
               ? "bg-gradient-to-r from-green-600 to-green-500"
               : isNegative
