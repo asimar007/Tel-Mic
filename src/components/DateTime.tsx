@@ -28,7 +28,7 @@ const DateTime: React.FC = () => {
 
   return (
     <motion.div
-      className="border border-blue-500 rounded-sm from-blue-900/30 to-blue-950/50 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] group"
+      className="border border-blue-900 rounded-sm from-blue-900/30 to-blue-950/50 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] group"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}

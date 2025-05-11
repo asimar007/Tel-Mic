@@ -34,7 +34,7 @@ const CurrencyRow: React.FC<CurrencyRowProps> = ({ currency }) => {
 
 const CurrencyRate: React.FC = () => {
   return (
-    <div className="border-1 bg-gray-950 text-white shadow-lg rounded-sm overflow-hidden w-full font-sans">
+    <div className="border border-blue-900 bg-gray-950 text-white shadow-lg rounded-sm overflow-hidden w-full font-sans">
       <table className="w-full table-auto">
         <thead>
           <tr className="border-b border-gray-800">

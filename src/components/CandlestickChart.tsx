@@ -55,7 +55,7 @@ const CandlestickChart: React.FC = () => {
   }, []);
 
   return (
-    <div className="border border-blue-500 rounded-lg p-2 flex flex-col flex-grow h-[250px] md:h-[300px] lg:h-[350px]">
+    <div className="border border-blue-900 rounded-lg p-1 flex flex-col flex-grow h-[250px] md:h-[300px] lg:h-[350px]">
       <div
         className="tradingview-widget-container w-full h-full"
         ref={container}

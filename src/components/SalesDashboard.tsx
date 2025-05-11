@@ -28,8 +28,8 @@ export default function SalesDashboard() {
   };
 
   return (
-    <div className="w-full h-full p-1">
-      <Card className="w-full h-full bg-black text-white border-1 shadow-2xl overflow-hidden rounded-sm">
+    <div className="w-full h-full">
+      <Card className="w-full h-full bg-black text-white border border-blue-900 shadow-2xl overflow-hidden rounded-sm">
         <div className="h-full flex flex-col p-1 space-y-2">
           {/* Header with icon and title */}
           <div className="flex items-center gap-2">
@@ -84,24 +84,32 @@ export default function SalesDashboard() {
                 name="本社"
                 value="2,925,484"
                 percentage="49"
+                prefix="¥"
+                highlight={true}
                 className="flex-1"
               />
               <RegionalMetric
                 name="常滑"
                 value="2,925,484"
                 percentage="49"
+                prefix="¥"
+                highlight={true}
                 className="flex-1"
               />
               <RegionalMetric
                 name="知立"
                 value="2,925,484"
                 percentage="49"
+                prefix="¥"
+                highlight={true}
                 className="flex-1"
               />
               <RegionalMetric
                 name="博多"
                 value="2,925,484"
                 percentage="49"
+                prefix="¥"
+                highlight={true}
                 className="flex-1 mb-2"
               />
             </div>
@@ -112,18 +120,24 @@ export default function SalesDashboard() {
                 name="島根"
                 value="2,925,484"
                 percentage="49"
+                prefix="¥"
+                highlight={true}
                 className="flex-1"
               />
               <RegionalMetric
                 name="東京"
                 value="2,925,484"
                 percentage="49"
+                prefix="¥"
+                highlight={true}
                 className="flex-1"
               />
               <RegionalMetric
                 name="名古屋"
                 value="2,925,484"
                 percentage="49"
+                prefix="¥"
+                highlight={true}
                 className="flex-1"
               />
               <RegionalMetric

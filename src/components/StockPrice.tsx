@@ -143,7 +143,7 @@ function NikkeiTicker({ currentValue, change }: NikkeiTickerProps) {
 
   return (
     <motion.div
-      className="w-full bg-gradient-to-br from-gray-900 to-black rounded-sm overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-blue-500/50"
+      className="w-full bg-gradient-to-br from-gray-900 to-black rounded-sm overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-blue-900"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
