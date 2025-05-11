@@ -80,7 +80,9 @@ const WeatherForecast: React.FC = () => {
       } catch (err) {
         console.error("Weather data fetch error:", err);
         setError(
-          err instanceof Error ? err.message : "Failed to load weather data"
+          err instanceof Error
+            ? err.message
+            : "天気データの読み込みに失敗しました"
         );
 
         // Fallback to hardcoded data if API fails
@@ -202,7 +204,7 @@ const WeatherForecast: React.FC = () => {
   if (loading) {
     return (
       <div className="border border-blue-900 rounded-lg p-4 from-blue-950 to-blue-900 w-full shadow-xl flex justify-center items-center">
-        <div className="text-blue-400">Loading weather data...</div>
+        <div className="text-blue-400">天気データを読み込み中...</div>
       </div>
     );
   }

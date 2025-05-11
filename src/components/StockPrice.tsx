@@ -67,7 +67,9 @@ const StockPrice: React.FC = () => {
       } catch (err) {
         console.error("Stock data fetch error:", err);
         setError(
-          err instanceof Error ? err.message : "Failed to load stock data"
+          err instanceof Error
+            ? err.message
+            : "株式データの読み込みに失敗しました"
         );
         // Keep the previous data if available
         setStockData((prevData) =>
@@ -96,7 +98,7 @@ const StockPrice: React.FC = () => {
   if (loading) {
     return (
       <div className="w-full bg-gradient-to-br from-gray-900 to-black rounded-sm p-4 flex justify-center items-center h-32">
-        <div className="text-blue-400">Loading stock data...</div>
+        <div className="text-blue-400">株式データを読み込み中...</div>
       </div>
     );
   }
