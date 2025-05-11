@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { TrendingUp, TrendingDown, ArrowRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 interface NikkeiTickerProps {
   currentValue: number;
@@ -8,108 +8,10 @@ interface NikkeiTickerProps {
 }
 
 const StockPrice: React.FC = () => {
-  const [stockData, setStockData] = useState({
-    currentValue: 0,
-    change: 0,
+  const [stockData] = useState({
+    currentValue: 31828.26,
+    change: -4081.44,
   });
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchStockData = async () => {
-      try {
-        const response = await fetch(
-          "https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/%5EN225",
-          {
-            method: "GET",
-            headers: {
-              "x-rapidapi-key":
-                "b93e24c615msh86475aef4d4ff55p1d1c99jsn227c09d9038f",
-              "x-rapidapi-host": "yahoo-finance15.p.rapidapi.com",
-            },
-          }
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const result = await response.json();
-
-        // Log the entire response for debugging
-        console.log("Full API Response:", result);
-
-        // Check if result is an object with a body property
-        if (
-          result &&
-          result.body &&
-          Array.isArray(result.body) &&
-          result.body.length > 0
-        ) {
-          const stockInfo = result.body[0];
-
-          // Extract and validate the required values
-          const currentValue = parseFloat(stockInfo.regularMarketPrice);
-          const change = parseFloat(stockInfo.regularMarketChange);
-
-          if (!isNaN(currentValue) && !isNaN(change)) {
-            setStockData({
-              currentValue,
-              change,
-            });
-            setError(null);
-          } else {
-            throw new Error("Invalid market data received");
-          }
-        } else {
-          throw new Error("Unexpected API response structure");
-        }
-      } catch (err) {
-        console.error("Stock data fetch error:", err);
-        setError(
-          err instanceof Error
-            ? err.message
-            : "株式データの読み込みに失敗しました"
-        );
-        // Keep the previous data if available
-        setStockData((prevData) =>
-          prevData.currentValue === 0
-            ? {
-                currentValue: 36863.15, // Fallback value
-                change: 83.48828, // Fallback value
-              }
-            : prevData
-        );
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    // Initial fetch
-    fetchStockData();
-
-    // Set up polling every 5 minutes (300000ms)
-    const intervalId = setInterval(fetchStockData, 300000);
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(intervalId);
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="w-full bg-gradient-to-br from-gray-900 to-black rounded-sm p-4 flex justify-center items-center h-32">
-        <div className="text-blue-400">株式データを読み込み中...</div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="w-full bg-gradient-to-br from-gray-900 to-black rounded-sm p-4 flex justify-center items-center h-32">
-        <div className="text-red-400">{error}</div>
-      </div>
-    );
-  }
 
   return (
     <NikkeiTicker
