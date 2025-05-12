@@ -10,7 +10,7 @@ interface NikkeiTickerProps {
 const StockPrice: React.FC = () => {
   const [stockData] = useState({
     currentValue: 31828.26,
-    change: -4081.44,
+    change: 4081.44,
   });
 
   return (
